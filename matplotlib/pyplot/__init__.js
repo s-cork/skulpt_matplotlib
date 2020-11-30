@@ -1807,7 +1807,7 @@ var $builtinmodule = function(name) {
   var CLASS_NDARRAY = "numpy.ndarray"; // maybe make identifier accessible in numpy module
   var np = Sk.importModule("numpy");
   var ndarray_f = np['$d'].array.func_code;
-  var getitem_f = np['$d'][CLASS_NDARRAY]['__getitem__'].func_code;
+  var getitem_f = np['$d'][CLASS_NDARRAY].prototype['__getitem__'].func_code;
   var ndarray = Sk.misceval.callsim(np['$d'].array.func_code, new Sk.builtin.list([1,2,3,4]));
 
   var create_chart = function() {
